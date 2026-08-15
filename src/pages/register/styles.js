@@ -13,7 +13,7 @@ export const RegisterStyles = styled.div`
   .register-wrapper {
     text-align: center;
     width: 100%;
-    max-width: 480px; /* Unified container sizing */
+    max-width: 480px; 
   }
 
   .register-card {

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { LoginStyles } from './styles'; 
-import InputComponent from '../../components/common/input-component';
+import InputComponent from '../../components/common/input-component'; 
 import CustomButton from '../../components/common/custome-button';
 import { useLoginController } from './controller';
 

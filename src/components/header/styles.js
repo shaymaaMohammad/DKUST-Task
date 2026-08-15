@@ -50,6 +50,25 @@ export const HeaderWrapper = styled.div`
   .nav-item a:hover {
     color: var(--color-white);
   }
+   
+  .normal-link {
+    color: #a0aec0; 
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: #ffffff; 
+    }
+  }
+
+  .active-link {
+    color: #ffffff !important; 
+    text-decoration: none;
+    font-weight: bold; 
+    position: relative;
+  }
+
 
   
   .nav-login-wrapper {

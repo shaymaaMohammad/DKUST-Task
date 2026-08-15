@@ -1,6 +1,7 @@
 import React from 'react';
 import {HeaderWrapper} from "./styles.js"; 
 import { Link } from 'react-router-dom'; 
+import { NavLink } from 'react-router-dom';
 
 function Header() {
   return (
@@ -11,9 +12,16 @@ function Header() {
             <div className="logo">DKUST</div>
             
             <nav className="nav-list">
-              <div className="nav-item"><a href="#!">HOME</a></div>
+              <div className="nav-item"><NavLink to="/" className={({ isActive }) => isActive ? "active-link" : "normal-link"}>
+                HOME
+                </NavLink>
+               </div>
               <div className="nav-item"><a href="#!">ABOUT</a></div>
               <div className="nav-item"><a href="#!">PORTFOLIO</a></div>
+              <div className="nav-item"><NavLink to="/products" className={({ isActive }) => isActive ? "active-link" : "normal-link"}>
+               PRODUCTS
+               </NavLink>
+               </div>
               <div className="nav-item"><a href="#!">SERVICES</a></div>
               <div className="nav-item"><a href="#!">BLOG</a></div>
               <div className="nav-item"><a href="#!">RESOURCES</a></div>

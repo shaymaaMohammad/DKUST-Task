@@ -1,15 +1,17 @@
 import styled from 'styled-components';
 
-export const ButtonStyles = styled.div`
-  width: 100%;
+export const ButtonContainer = styled.div`
+
+  width: ${props => props.size === 'sm' ? 'auto' : '100%'};
 
   .custom-btn {
-    width: 100%;
-    height: 44px;
-    padding: 0.5rem;
+    /* Control width, height, and padding based on size*/
+    width: ${props => props.size === 'sm' ? 'auto' : '100%'};
+    height: ${props => props.size === 'sm' ? '34px' : '44px'};
+    padding: ${props => props.size === 'sm' ? '0 16px' : '0.5rem'};
+    font-size: ${props => props.size === 'sm' ? '0.8rem' : '0.9rem'};
+    
     border-radius: 6px;
-    border: none;
-    font-size: 0.9rem;
     font-weight: bold;
     cursor: pointer;
     transition: all 0.2s ease-in-out;
@@ -17,19 +19,29 @@ export const ButtonStyles = styled.div`
     align-items: center;
     justify-content: center;
     gap: 8px;
-    background-color: var(--color-green); 
-    color: var(--color-white);
+
+    /* Color control based on the variant */
+    background-color: ${props => 
+      props.variant === 'outline' ? '#ffffff' : 'var(--color-green, #2ec4b6)'};
+    color: ${props => 
+      props.variant === 'outline' ? '#1a253c' : 'var(--color-white, #ffffff)'};
+    border: ${props => 
+      props.variant === 'outline' ? '1px solid #eaeaea' : 'none'};
 
     &:hover {
-      background-color: var(--color-green-hover);
+      background-color: ${props => 
+        props.variant === 'outline' ? '#f8f9fa' : 'var(--color-green-hover, #249b8f)'};
+      border-color: ${props => props.variant === 'outline' ? '#ccc' : 'none'};
     }
   }
 
-  /* Social media buttons */
+  /* Butttttton Social  */
   .custom-btn.social-btn {
     background-color: var(--color-white) !important; 
     color: var(--color-text-gray) !important; 
     border: 1px solid #e5e5e5 !important; 
+    width: 100%;
+    height: 44px;
     
     &:hover {
       background-color: var(--color-gray-bg) !important;

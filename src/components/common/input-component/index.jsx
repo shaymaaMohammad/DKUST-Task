@@ -19,7 +19,7 @@ const InputComponent = ({
           {icon && <i className={`bi bi-${icon}`}></i>}
           
           <input 
-            type={type} 
+            type={type}
             placeholder={placeholder}
             value={fieldValue}
             onChange={onChangeFunction}
