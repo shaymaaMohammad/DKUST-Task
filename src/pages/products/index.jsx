@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import productsArray from '../../data/productsData';
 import ProductCardGrid from '../../components/ProductCard/prodcutCardGrid';
 import ProductCardList from '../../components/ProductCard/prodcutCardList'; 
+import ProductDetailsPage from '../productDetails';
 import PageStyles  from './styles'; 
 
 const ProductsPage = () => {
@@ -12,20 +13,23 @@ const ProductsPage = () => {
   // Filtering logic based on the selected section
   let filteredProducts = selectedCategory === "All"
     ? productsArray 
-    : productsArray.filter(product => product.category === selectedCategory);
+    : productsArray?.filter(product => product?.category === selectedCategory);
 
   // Smart sorting logic based on price (low to high or vice versa)
   if (sortBy === "price-low") {
-    filteredProducts = [...filteredProducts].sort((a, b) => a.price - b.price);
+    filteredProducts = [...filteredProducts]?.sort((a, b) => a.price - b.price);
   } else if (sortBy === "price-high") {
-    filteredProducts = [...filteredProducts].sort((a, b) => b.price - a.price);
+    filteredProducts = [...filteredProducts]?.sort((a, b) => b.price - a.price);
+  }
+  else if (sortBy === "top-by"){
+    filteredProducts = [...filteredProducts]?.sort((a, b) => b.rating - a.rating);
   }
 
   /* Dynamically extracting unique categories from the product array (using a `Set`) is one approach, 
   but it doesn't suit the current code—removing a category would cause the corresponding button to disappear.
    That is why I opted for the fixed-name method, 
    though I included the dynamic approach here because I liked it.
-  //const categories = ["All", ...new Set(productsArray.map(product => product.category))];*/
+  //const categories = ["All", ...new Set(productsArray?.map(product => product.category))];*/
  //Manually fixing section names ensures the buttons always remain in place, even if they are empty.
   const categories = ["All", "Software", "AI", "Hardware", "Robotics", "Security"];
 
@@ -52,7 +56,7 @@ const ProductsPage = () => {
           
           {/* Filter Butttttons */}
           <div className="filterBar">
-            {categories.map((category) => (
+            {categories?.map((category) => (
               <button
                 key={category}
                 className={selectedCategory === category ? "active" : ""}
@@ -69,6 +73,7 @@ const ProductsPage = () => {
               <option value="default">Sort: Default</option>
               <option value="price-low">Price: Low to High</option>
               <option value="price-high">Price: High to Low</option>
+              <option value="top-by">Rating: Top By</option>
             </select>
 
             <div className="viewToggleGroup">
@@ -93,12 +98,12 @@ const ProductsPage = () => {
 
         {/*  Number of products */}
         <p className="productCountText">
-  {filteredProducts.length} {filteredProducts.length === 1 ? 'product' : 'products'}  found
+  {filteredProducts?.length} {filteredProducts?.length === 1 ? 'product' : 'products'}  found
 </p>
 
 
         {/* The interchangeable display container based on the current viewMode.*/}
-        {filteredProducts.length === 0 ? (
+        {filteredProducts?.length === 0 ? (
   
   <div className="text-center py-5 w-100">
     <h3 style={{ color: '#888', fontWeight: '500' }}>No products found</h3>
@@ -106,8 +111,8 @@ const ProductsPage = () => {
 ) : viewMode === 'grid' ? (
   
   <div className="row row-cols-1 row-cols-md-3 g-4">
-    {filteredProducts.map((product) => (
-      <div key={product.id} className="col d-flex align-items-stretch">
+    {filteredProducts?.map((product) => (
+      <div key={product?.id} className="col d-flex align-items-stretch">
         <ProductCardGrid product={product} onAddToCart={addToCart} />
       </div>
     ))}
@@ -115,8 +120,8 @@ const ProductsPage = () => {
 ) : (
   /* For the "List" view: The vertical list cards stack beneath one another, spanning the full width. */
   <div className="w-100">
-    {filteredProducts.map((product) => (
-      <ProductCardList key={product.id} product={product} onAddToCart={addToCart} />
+    {filteredProducts?.map((product) => (
+      <ProductCardList key={product?.id} product={product} onAddToCart={addToCart} />
     ))}
   </div>
 )}

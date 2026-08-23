@@ -6,6 +6,7 @@ import HomePage from './pages/home'
 import Register from './pages/register';     
 import Footer from './components/footer';
 import ProductsPage from './pages/products';
+import ProductDetailsPage  from './pages/productDetails';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css'; 
 
@@ -31,6 +32,7 @@ function App() {
           
           {/* Route for Products page */}
           <Route path="/products" element={<ProductsPage />} />
+          <Route path="/products/:id" element={<ProductDetailsPage />} />
         </Routes>
         
         {/* Footer */}

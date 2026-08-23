@@ -4,7 +4,7 @@ import CustomButton from '../../components/common/custome-button';
 
 const HomePage = () => {
   return (
-    <HomeStyles>
+    <HomeStyles >
       <section className="hero d-flex align-items-center">
         <div className="container text-center text-white">
           <h1 className="fw-semibold">Frequently Asked Questions</h1>

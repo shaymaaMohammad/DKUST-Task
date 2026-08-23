@@ -1,42 +1,54 @@
 import React from 'react';
 import CustomButton from '../../../components/common/custome-button'; 
-import ProductRating from '../ProductRating'; 
+import ProductRating from '../ProductRating';
+import { useNavigate } from 'react-router-dom'; 
 import ProductStyles from './styles';
 
-const ProductCardGrid = ({ product, onAddToCart }) => {
-  const { badge, category, name, description, rating, reviewsCount, price, colorBg } = product;
+const ProductCardGrid = ({ product, onAddToCart, isMinimal = false }) => {
+  const { id, badge, category, name, description, rating, reviewsCount, price, colorBg } = product;
+  const navigate = useNavigate(); 
+
+  //Go to the details page
+  const handleDetailsClick = () => {
+    navigate(`/products/${id}`); 
+    window.scrollTo(0, 0); 
+  };
 
   return (
-    /* We passed the `bgCol` here to the parent element so that Styled Components could read it dynamically and color the cube's background.*/
     <ProductStyles bgCol={colorBg}>
-      <div className="cardWrapper">
+      <div className={`cardWrapper ${isMinimal ? 'minimalCard' : ''}`}>
         
-        {/* Top-opening cube box*/}
+        {/*Top-opening cube box*/}
         <div className="imageContainer">
           {badge && <span className="badge">{badge}</span>}
-          {/* The white hollow cube icon*/}
-          <i className="bi bi-box" style={{ fontSize: '3rem', color: '#ffffff' }}></i> 
+          <i className="bi bi-box mainCardGridIcon"></i> 
         </div>
 
-        {/* Bottom card content*/}
+        {/*cardContent */}
         <div className="cardContent">
           <p className="categoryText">🔸 {category}</p>
           <h3 className="productTitle">{name}</h3>
-          <p className="productDescription">{description}</p>
           
-          {/* Star Component*/}
-          <ProductRating rating={rating} reviewsCount={reviewsCount} />
-
+          {/* Hide the description and rating in the mini-card view on the details page.*/}
+          {!isMinimal && (
+            <>
+              <p className="productDescription">{description}</p>
+              <ProductRating rating={rating} reviewsCount={reviewsCount} />
+            </>
+          )}
           
           <div className="cardFooter">
             <div className="priceText">
               ${price}<span>/mo</span>
             </div>
             
-            <div className="buttonGroup">
-              <CustomButton text="Details" variant="outline" size="sm" />
-              <CustomButton text="Add" variant="solid" size="sm" onClick={() => onAddToCart(product)} />
-            </div>
+            {/* Hide buttons in the compact card view on the details page.*/}
+            {!isMinimal && (
+              <div className="buttonGroup">
+                <CustomButton text="Details" variant="outline" size="sm" onClick={handleDetailsClick} />
+                <CustomButton text="Add" variant="solid" size="sm" onClick={() => onAddToCart(product)} />
+              </div>
+            )}
           </div>
 
         </div>

@@ -18,6 +18,11 @@ const ListStyles = styled.div`
       box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
     }
   }
+  .mainCardListIcon {
+  font-size: 2.5rem;
+  color: #ffffff;
+}
+
 
   .imageContainer {
     background-color: ${props => props.bgCol || '#1d3557'};

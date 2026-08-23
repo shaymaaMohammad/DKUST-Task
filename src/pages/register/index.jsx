@@ -120,7 +120,7 @@ const Register = () => {
           </p>
         </div>
 
-        <Link to="/login" className="back-home">
+        <Link to="/" className="back-home">
           Back to Home
         </Link>
       </div>

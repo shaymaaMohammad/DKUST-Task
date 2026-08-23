@@ -1,4 +1,4 @@
-:root {
+/* :root {
   --color-navy-dark: #0b1f3a;
   --color-navy-hero: #16305c;
   --color-green: #4caf50;
@@ -7,6 +7,7 @@
   --color-text-dark: #1a1a2e;
   --color-text-gray: #6b7280;
   --color-white: #ffffff;
+  --font-primary: "Inter", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
 * {
@@ -16,7 +17,7 @@
 }
 
 body {
-  font-family: system-ui, sans-serif;
+  font-family: var(--font-primary);
   color: var(--color-text-dark);
 }
 
@@ -27,4 +28,4 @@ a {
 
 ul {
   list-style: none;
-}
+} */
