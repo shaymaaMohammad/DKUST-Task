@@ -14,6 +14,15 @@ export const InputStyles = styled.div`
       margin-bottom: 0.5rem;
       color: var(--color-text);
     }
+
+    
+    .error-message {
+      color: #dc3545;
+      font-size: 0.8rem; 
+      margin-top: 5px;
+      display: block;
+      text-align: left; 
+    }
   }
 
   .input-box {
@@ -22,8 +31,7 @@ export const InputStyles = styled.div`
     align-items: center;
     width: 100%;
 
-    /* Handle inputs with icons padding */
-   input {
+    input {
       width: 100%;
       padding: 0.75rem 1rem 0.75rem 2.5rem; 
       border: 1px solid #e2e8f0;
@@ -35,6 +43,11 @@ export const InputStyles = styled.div`
 
       &:focus {
         border-color: var(--color-green);
+      }
+
+     
+      &.input-error {
+        border-color: #dc3545;
       }
     }
 
@@ -48,16 +61,14 @@ export const InputStyles = styled.div`
       z-index: 5;
     }
 
-    /* Left side form icons */
     & > i:first-of-type {
       left: 1rem;
     }
 
-    /* Right side password eye icon */
     .bi-eye {
       right: 1rem;
       cursor: pointer;
-      left: auto; /* Reset left position */
+      left: auto; 
     }
   }
 `;

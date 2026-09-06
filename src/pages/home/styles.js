@@ -81,6 +81,88 @@ const HomeStyles = styled.div`
   padding: 1.2rem;
   box-shadow: none !important;
 }
+@media (max-width: 768px) {
+  .hero {
+    min-height: 350px;
+    padding: 60px 0;
+  }
+
+  .hero h1 {
+    font-size: 1.9rem;
+  }
+
+  .hero p {
+    max-width: 600px;
+    font-size: 0.85rem;
+    padding: 0 15px;
+  }
+
+  .faq-section {
+    padding: 60px 0;
+  }
+
+  .faq-section h2 {
+    font-size: 1.7rem;
+  }
+
+  .faq-section > .container > p {
+    max-width: 600px;
+    font-size: 0.85rem;
+    padding: 0 15px;
+  }
+
+  .accordion {
+    margin-left: 15px !important;
+    margin-right: 15px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    min-height: 320px;
+    padding: 50px 0;
+  }
+
+  .hero h1 {
+    font-size: 1.6rem;
+  }
+
+  .hero p {
+    font-size: 0.8rem;
+    line-height: 1.6;
+    padding: 0 10px;
+  }
+
+  .faq-section {
+    padding: 45px 0;
+  }
+
+  .faq-section h2 {
+    font-size: 1.4rem;
+    padding: 0 10px;
+  }
+
+  .faq-section > .container > p {
+    font-size: 0.8rem;
+    padding: 0 10px;
+    margin-bottom: 2rem !important;
+  }
+
+  .accordion {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  .accordion-button {
+    font-size: 0.85rem;
+    padding: 1rem;
+  }
+
+  .accordion-body {
+    font-size: 0.8rem;
+    padding: 1rem;
+  }
+}
 
 `;
 export default HomeStyles ; 

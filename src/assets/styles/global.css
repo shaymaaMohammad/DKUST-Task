@@ -1,6 +1,6 @@
 :root {
   --color-navy-dark: #0b1f3a;
-  --color-navy-hero: #16305c;
+  --color-navy-hero: rgb(26, 58, 110);
   --color-green: #4caf50;
   --color-green-hover: #079737;
   --color-gray-bg: #f4f6fa;

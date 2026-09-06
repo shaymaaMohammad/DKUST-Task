@@ -9,6 +9,7 @@
     "@testing-library/user-event": "^13.5.0",
     "bootstrap": "^5.3.8",
     "bootstrap-icons": "^1.13.1",
+    "formik": "^2.4.9",
     "icon": "^0.0.3",
     "react": "^19.2.8",
     "react-bootstrap": "^2.10.10",
@@ -17,7 +18,9 @@
     "react-router-dom": "^7.18.2",
     "react-scripts": "5.0.1",
     "styled-components": "^6.5.1",
-    "web-vitals": "^2.1.4"
+    "swiper": "^14.2.0",
+    "web-vitals": "^2.1.4",
+    "yup": "^1.7.1"
   },
   "scripts": {
     "start": "react-scripts start",

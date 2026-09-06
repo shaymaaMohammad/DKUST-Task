@@ -1,26 +1,26 @@
 import React from 'react';
 import styled from 'styled-components';
 /*****************  ProdcutRating Styles ***********************/
+
 const DynamicStar = styled.span`
-  font-size: 16px;
+  font-size: 14px;
   display: inline-block;
   position: relative;
   font-family: Arial, sans-serif;
   cursor: default;
   line-height: 1;
-  
+
   background: linear-gradient(
-    to right, 
-    #ffb703 ${props => props.fillPercent}%, 
+    to right,
+    #ffb703 ${props => props.fillPercent}%,
     #ccc ${props => props.fillPercent}%
   );
-  
 
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  
+
   &::before {
-    content: '★'; 
+    content: '★';
   }
 `;
 
@@ -28,14 +28,15 @@ const RatingStyles = {
   RatingWrapper: styled.div`
     display: flex;
     align-items: center;
-    gap: 3px;
-    font-size: 14px;
-    margin-bottom: 15px;
+    gap: 2px;
+
+    margin-bottom: 0;
 
     span.review-text {
-      color: #888888;
+      color: #64748b;
       margin-left: 6px;
-      font-size: 13px;
+      font-size: 11px;
+      white-space: nowrap;
     }
   `
 };

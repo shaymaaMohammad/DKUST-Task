@@ -4,22 +4,27 @@ import ProductRating from "../../components/ProductCard/ProductRating";
 import CustomButton from "../../components/common/custome-button"; 
 import ProductCardGrid from "../../components/ProductCard/prodcutCardGrid"; 
 import productsArray from "../../data/productsData"; 
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination } from "swiper/modules";
+
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 import Styles from "./styles"; 
 
 // Product Features
-const ProductFeatures = () => {
-  const features = ["Real-time data streaming",
-     "ML-powered predictions",
-      "Custom dashboards", 
-      "API integrations", 
-      "Export to CSV / PDF"];
+const ProductFeatures = ({ features }) => {
   return (
     <ul className="featureList">
-      {features?.map((feature, index) => <li key={index}><i className="bi bi-check-circle"></i> {feature}</li>)}
+      {features?.map((feature, index) => (
+        <li key={index}>
+          <i className="bi bi-check-circle"></i>
+          {feature}
+        </li>
+      ))}
     </ul>
   );
 };
-
 const ProductDetailsPage = () => {
   const { id } = useParams();
   const navigate = useNavigate();
@@ -30,7 +35,7 @@ const ProductDetailsPage = () => {
   if (!product) {
     return (
       <Styles>
-        <div className="container py-5 text-center errorContainer">
+        <div className="container productDetailsContainer pb-5 text-center errorContainer">
           <i className="bi bi-exclamation-circle errorIcon"></i>
           <h2 className="errorTitle">No products found</h2>
           <CustomButton text="Back to Products" variant="solid" onClick={() => navigate("/products")} />
@@ -69,7 +74,7 @@ const ProductDetailsPage = () => {
           </div>
         </div>
       </div>
-      {/* The main container for the card and the underlying products.*/}
+      
       <div className="container pb-5">
         <article className="productDetailCard row g-0">
           {/* Left Block: Cube image and badge */}
@@ -83,7 +88,7 @@ const ProductDetailsPage = () => {
             <h2>{product?.name}</h2>
             <div className="ratingRow"><ProductRating rating={product?.rating} reviewsCount={product?.reviewsCount} /></div>
             <p className="description">{product?.description}</p>
-            <ProductFeatures />
+          <ProductFeatures features={product?.features} />
             <div className="priceRow"><span className="amount">${product?.price}</span><span className="period">/month</span></div>
            {/* Quantity control buttons*/}
             <div className="quantityRow">
@@ -104,24 +109,47 @@ const ProductDetailsPage = () => {
 
         {/* Bottom Related Products Section*/}
         <section className="relatedSection">
-          <h3>Related Products</h3>
-          <div className="row g-4">
-            {visibleRelated?.map((item) => (
-              <div 
-                key={item?.id} 
-                className="col-12 col-sm-6 col-md-4"
-                onClick={() => { navigate(`/products/${item?.id}`); window.scrollTo(0, 0); }}
-                style={{ cursor: "pointer" }}
-              >
-                <ProductCardGrid 
-                  product={item} 
-                  isMinimal={true} 
-                  onAddToCart={(clicked) => console.log("Added:", clicked)}
-                />
-              </div>
-            ))}
-          </div>
-        </section>
+  <h3>Related Products</h3>
+
+  <Swiper
+    modules={[Navigation, Pagination]}
+    spaceBetween={20}
+    navigation
+    pagination={{ clickable: true }}
+    breakpoints={{
+      0: {
+        slidesPerView: 1,
+      },
+      576: {
+        slidesPerView: 2,
+      },
+      992: {
+        slidesPerView: 3,
+      },
+    }}
+    className="relatedProductsSwiper"
+  >
+    {visibleRelated?.map((item) => (
+      <SwiperSlide key={item?.id}>
+        <div
+          className="relatedProductItem"
+          onClick={() => {
+            navigate(`/products/${item?.id}`);
+            window.scrollTo(0, 0);
+          }}
+        >
+          <ProductCardGrid
+            product={item}
+            isMinimal={true}
+            onAddToCart={(clicked) =>
+              console.log("Added:", clicked)
+            }
+          />
+        </div>
+      </SwiperSlide>
+    ))}
+  </Swiper>
+</section>
 
       </div>
     </Styles>

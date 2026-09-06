@@ -9,6 +9,7 @@ import ProductsPage from './pages/products';
 import ProductDetailsPage  from './pages/productDetails';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css'; 
+import QuizPage from './pages/quiz';
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
           {/* Route for Products page */}
           <Route path="/products" element={<ProductsPage />} />
           <Route path="/products/:id" element={<ProductDetailsPage />} />
+          <Route path="/quiz" element={<QuizPage />} />
         </Routes>
         
         {/* Footer */}
