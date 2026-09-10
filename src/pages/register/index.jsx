@@ -30,15 +30,35 @@ const Register = () => {
     if (/[A-Z]/.test(password) || /[0-9]/.test(password)) score++;
     if (/[@$!%*?&]/.test(password) && password.length >= 8) score++;
 
-    if (score === 1) return { level: 1, text: "Weak", status: "weak" };
-    if (score === 2) return { level: 2, text: "Medium", status: "medium" };
-    if (score === 3) return { level: 3, text: "Strong", status: "strong" };
-    return { level: 1, text: "Weak", status: "weak" };
+    if (score === 1)
+       return { 
+      level: 1,
+       text: "Weak",
+        status: "weak" 
+      };
+    if (score === 2) 
+      return { 
+    level: 2, 
+    text: "Medium",
+     status: "medium"
+     };
+    if (score === 3) 
+      return { 
+    level: 3, 
+    text: "Strong",
+     status: "strong" 
+    };
+    return { 
+      level: 1,
+       text: "Weak",
+        status: "weak"
+       };
   };
 
   const strength = getPasswordStrength(formik.values.password);
 
-  // دالة الربط الذكي التي تمرر كلاس الخطأ الخاص بالخلفية الحمراء
+
+
   const connectField = (name) => {
     const hasError = formik.touched[name] && formik.errors[name];
     return {
@@ -47,19 +67,46 @@ const Register = () => {
       onChangeFunction: (value) => formik.setFieldValue(name, value),
       onBlurFunction: () => formik.setFieldTouched(name, true),
       errorMessage: hasError ? formik.errors[name] : null,
-      // تمرير كلاس إضافي للمكون لكي يتلون بالخلفية الحمراء عند الخطأ
       className: hasError ? "input-field-error" : "",
     };
   };
 
   const nameFields = [
-    { type: InputTypes.TEXT, fieldLabel: "First Name", placeholder: "John", ...connectField("firstName") },
-    { type: InputTypes.TEXT, fieldLabel: "Last Name", placeholder: "Doe", ...connectField("lastName") }
+    { 
+      type: InputTypes.TEXT, 
+      fieldLabel: "First Name", 
+      placeholder: "John",
+       ...connectField("firstName") 
+      },
+    { 
+      type: InputTypes.TEXT, 
+      fieldLabel: "Last Name",
+       placeholder: "Doe", 
+       ...connectField("lastName") 
+      }
   ];
 
-  const emailField = { type: InputTypes.EMAIL, fieldLabel: "Email Address", placeholder: "you@example.com", icon: "envelope", ...connectField("email") };
-  const passwordField = { type: InputTypes.PASSWORD, fieldLabel: "Password", placeholder: "Min. 6 characters", icon: "lock", ...connectField("password") };
-  const confirmPasswordField = { type: InputTypes.PASSWORD, fieldLabel: "Confirm Password", placeholder: "Repeat your password", icon: "lock", ...connectField("confirmPassword") };
+  const emailField = { 
+    type: InputTypes.EMAIL,
+     fieldLabel: "Email Address",
+      placeholder: "you@example.com",
+       icon: "envelope",
+        ...connectField("email")
+       };
+  const passwordField = {
+     type: InputTypes.PASSWORD,
+      fieldLabel: "Password",
+       placeholder: "Min. 6 characters",
+        icon: "lock",
+         ...connectField("password")
+         };
+  const confirmPasswordField = {
+     type: InputTypes.PASSWORD,
+      fieldLabel: "Confirm Password",
+       placeholder: "Repeat your password",
+        icon: "lock",
+         ...connectField("confirmPassword")
+         };
 
   return (
     <RegisterStyles>

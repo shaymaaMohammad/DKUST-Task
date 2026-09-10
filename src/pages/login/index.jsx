@@ -7,6 +7,7 @@ import { useFormik } from 'formik';
 import { loginSchema } from './schema';
 
 const Login = () => {
+  
   const formik = useFormik({
      initialValues: {
       email: "",
@@ -56,6 +57,7 @@ const Login = () => {
   };
 
   return (
+
     <LoginStyles>
       <div className="container">
         <div className="login-wrapper">
