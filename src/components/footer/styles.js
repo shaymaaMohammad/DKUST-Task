@@ -27,17 +27,17 @@ export const FooterWrapper = styled.div`
     }
    
   .footer-col-title {
-    font-size: 0.95rem; 
+    font-size: var(--font-size); 
     font-weight: 700;
-    color: #1a202c; 
+    color:var(--color-text-dark); 
     letter-spacing: 0.5px;
     margin-bottom: 1.25rem;
   }
   
   
   .footer-text-muted {
-    color: #718096;
-    font-size: 0.85rem; 
+    color:var(--color-text-gray);
+    font-size: var(--font-size); 
     line-height: 1.6;
   }
  .text-spacing {
@@ -60,13 +60,13 @@ export const FooterWrapper = styled.div`
     }
 
     a {
-      color: #718096;
-      font-size: 0.85rem; 
+      color:var(--color-text-gray);
+      font-size:var(--font-size); 
       text-decoration: none;
       transition: all 0.3s;
 
       &:hover {
-        color: #1a202c;
+        color:var(--color-green-hover);
         padding-left: 3px; 
       }
     }
@@ -87,19 +87,19 @@ export const FooterWrapper = styled.div`
     border: none;
     padding: 0.5rem 0.75rem;
     outline: none;
-    font-size: 0.85rem;
+    font-size: var(--font-size);
   }
 
   .btn-green-submit {
     background-color: var(--color-green);
-    color: white;
+    color: var(--color-white);
     border: none;
     padding: 0.5rem 1rem;
     cursor: pointer;
     transition: background-color 0.3s;
 
     &:hover {
-      background-color: #3d8b40;
+      background-color:var(--color-green-hover);
     }
   }
 
@@ -115,7 +115,7 @@ export const FooterWrapper = styled.div`
   .footer-copyright {
     margin: 0;
     color: var(--color-text-gray);
-    font-size: 0.85rem;
+    font-size:  var(--font-size);
   }
 
   .footer-social-icons {

@@ -1,11 +1,20 @@
 
 import {HeaderWrapper} from "./styles.js"; 
-import { Link } from 'react-router-dom'; 
+import { Link, useNavigate } from 'react-router-dom'; 
 import { NavLink } from 'react-router-dom';
 import React, { useState } from 'react';
+ import { useTheme } from "../../context/theme/useTheme.js";
+ import { useDispatch, useSelector } from "react-redux";
+import { logout } from "../../store/auth/authSlice";
+
 
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+ const { theme, toggleTheme } = useTheme();
+// ************************Rudex Auth********************
+ const dispatch = useDispatch();
+const navigate = useNavigate();
+const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
 
   const closeMenu = () => {
     setMenuOpen(false);
@@ -90,21 +99,44 @@ function Header() {
               </nav>
 
               <div className="nav-login-wrapper">
-                <Link
-                  to="/login"
-                  className="btn-login-outline"
-                  onClick={closeMenu}
-                >
-                  LOGIN
-                </Link>
 
-                <Link
-                  to="/register"
-                  className="btn-login-outline"
-                  onClick={closeMenu}
+                 <button 
+                  onClick={toggleTheme} 
+                  className="btn-theme-toggle"
                 >
-                  REGISTER
-                </Link>
+                  {theme === 'light' ? '🌙' : '☀️'}
+                </button>
+              
+                {isAuthenticated ? (
+  <button
+    className="btn-login-outline"
+    onClick={() => {
+      dispatch(logout());
+      closeMenu();
+      navigate("/login");
+    }}
+  >
+    LOGOUT
+  </button>
+) : (
+  <Link
+    to="/login"
+    className="btn-login-outline"
+    onClick={closeMenu}
+  >
+    LOGIN
+  </Link>
+)}
+
+               {!isAuthenticated && (
+  <Link
+    to="/register"
+    className="btn-login-outline"
+    onClick={closeMenu}
+  >
+    REGISTER
+  </Link>
+)}
               </div>
             </div>
 

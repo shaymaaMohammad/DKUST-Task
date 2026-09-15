@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 const ListStyles = styled.div` 
   .cardWrapper { 
-    background: #ffffff;
+    background: var(--color-white);
     border: 1px solid #eaeaea;
     border-radius: 12px;
     overflow: hidden;
@@ -20,7 +20,7 @@ const ListStyles = styled.div`
   }
   .mainCardListIcon {
   font-size: 2.5rem;
-  color: #ffffff;
+  color: var(--color-white);
 }
 
 
@@ -32,7 +32,7 @@ const ListStyles = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
+    color: var(--color-white);
     font-size: 48px;
     flex-shrink: 0;
   }
@@ -41,11 +41,11 @@ const ListStyles = styled.div`
     position: absolute;
     top: 12px;
     left: 12px;
-    background-color: #28a745; 
-    color: white;
+    background-color: var(--color-green); 
+    color: var(--color-white);
     padding: 3px 10px;
     border-radius: 20px;
-    font-size: 10px;
+    font-size: var(--font-size);
     font-weight: bold;
   }
 
@@ -58,22 +58,22 @@ const ListStyles = styled.div`
   }
 
   .categoryText {
-    font-size: 11px;
-    color: #888888;
+    font-size:var(--font-size);
+    color: var(--color-text-gray);
     text-transform: uppercase;
     margin-bottom: 4px;
   }
 
   .productTitle {
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 700;
-    color: #1a253c;
+    color:var(--color-text-gray);
     margin: 0 0 6px 0;
   }
 
   .productDescription {
-    font-size: 13px;
-    color: #666666;
+    font-size: 12px;
+    color: var(--color-text-gray);
     line-height: 1.4;
     margin-bottom: 10px;
     max-width: 600px; 
@@ -92,13 +92,13 @@ const ListStyles = styled.div`
   }
 
   .priceText {
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 700;
-    color: #2ec4b6;
+    color: var(--color-green);
     
     span {
-      font-size: 12px;
-      color: #888888;
+      font-size: var(--font-size);
+      color: var(--color-text-gray);
       font-weight: normal;
     }
   }
@@ -107,6 +107,8 @@ const ListStyles = styled.div`
     display: flex;
     gap: 8px;
   }
+  
+  
 `;
 
 export default ListStyles;

@@ -13,7 +13,7 @@ const ProductStyles = styled.div`
 
   overflow: hidden;
 
-  background: #ffffff;
+  background: var(--color-white);
 
   border: 1px solid #e5e7eb;
   border-radius: 10px;
@@ -51,7 +51,7 @@ const ProductStyles = styled.div`
 }
 
  .mainCardGridIcon {
-  color: #ffffff;
+  color: var(--color-white);
   font-size: 2.4rem;
   line-height: 1;
 }
@@ -71,22 +71,22 @@ const ProductStyles = styled.div`
 
   border-radius: 20px;
 
-  color: #ffffff;
+  color: var(--color-white);
 
-  font-size: 9px;
+  font-size:var(--font-size);
   font-weight: 700;
   line-height: 1;
 
   white-space: nowrap;
 
-  background-color: #20a464;
+  background-color: var(--color-green);
 }
   .badge.best-seller,
   .badge.new,
   .badge.popular,
   .badge.sale,
   .badge.top-rated {
-    background-color: #20a464;
+    background-color: var(--color-green);
   }
 
   /* =========================
@@ -105,9 +105,9 @@ const ProductStyles = styled.div`
   .categoryText {
     margin: 0 0 6px;
 
-    color: #94a3b8;
+    color: var(--color-text-gray);
 
-    font-size: 11px;
+    font-size: var(--font-size);
     font-weight: 500;
 
     line-height: 1.4;
@@ -120,9 +120,9 @@ const ProductStyles = styled.div`
 
     margin: 0 0 9px;
 
-    color: #1e293b;
+    color: var(--color-text-dark);
 
-    font-size: 17px;
+    font-size: 16px;
     font-weight: 700;
 
     line-height: 1.35;
@@ -137,9 +137,9 @@ const ProductStyles = styled.div`
 
   overflow: hidden;
 
-  color: #64748b;
+  color: var(--color-text-gray);
 
-  font-size: 11px;
+  font-size:var(--font-size);
   line-height: 19px;
 
   -webkit-box-orient: vertical;
@@ -171,9 +171,9 @@ const ProductStyles = styled.div`
  .priceText {
   flex-shrink: 0;
 
-  color: #20a464;
+  color: #00a63e;
 
-  font-size: 17px;
+  font-size: 16px;
   font-weight: 700;
 
   white-space: nowrap;
@@ -181,9 +181,9 @@ const ProductStyles = styled.div`
   span {
     margin-left: 2px;
 
-    color: #94a3b8;
+    color:var(--color-text-gray);
 
-    font-size: 10px;
+    font-size:var(--font-size);
     font-weight: 500;
   }
 }
@@ -215,7 +215,7 @@ const ProductStyles = styled.div`
 
   border-radius: 4px;
 
-  font-size: 10px;
+  font-size: var(--font-size);
 
   white-space: nowrap;
 }
@@ -242,7 +242,7 @@ const ProductStyles = styled.div`
   .categoryText {
     margin-bottom: 5px;
 
-    font-size: 10px;
+    font-size: var(--font-size);
   }
 
   .productTitle {
@@ -250,7 +250,7 @@ const ProductStyles = styled.div`
 
     margin-bottom: 14px;
 
-    font-size: 16px;
+    font-size: 15px;
 
     line-height: 1.35;
   }
@@ -260,7 +260,7 @@ const ProductStyles = styled.div`
   }
 
   .priceText {
-    font-size: 17px;
+    font-size: 15px;
   }
 }
 
@@ -274,7 +274,7 @@ const ProductStyles = styled.div`
     }
 
     .productTitle {
-      font-size: 16px;
+      font-size: 15px;
     }
 
     .productDescription {

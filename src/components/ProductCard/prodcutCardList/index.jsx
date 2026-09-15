@@ -5,7 +5,17 @@ import ListStyles from './styles';
 import { useNavigate } from 'react-router-dom';
 
 const ProductCardList = ({ product, onAddToCart }) => {
-  const { id, badge, category, name, description, rating, reviewsCount, price, colorBg } = product;
+  const { 
+    id,
+     badge, 
+     category,
+      name, 
+      description,
+       rating, 
+       reviewsCount, 
+       price, 
+       colorBg 
+      } = product;
   const navigate = useNavigate(); 
 
    //Go to the details page

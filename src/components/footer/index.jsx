@@ -40,7 +40,7 @@ const Footer = () => {
         </div>
 
         <div className="footer-col">
-         <h3 className="newsletter-title">Subscribe Newsletter</h3>
+         <h3 className="footer-col-title">Subscribe Newsletter</h3>
           <p className="footer-text-muted text-spacing">
             Subscribe to our newsletter to get the latest updates and news.
           </p>
@@ -61,7 +61,7 @@ const Footer = () => {
         
       </div>
 
-      <div className="footer-bottom-container footer-bottom">
+      <div className=" container footer-bottom-container footer-bottom">
         <p className="footer-copyright">Copyright &copy; All Rights Reserved</p>
         
         <div className="footer-social-icons">

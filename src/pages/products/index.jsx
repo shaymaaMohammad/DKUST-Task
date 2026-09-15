@@ -6,6 +6,7 @@ import ProductDetailsPage from '../productDetails';
 import PageStyles  from './styles'; 
 import InputProvider from '../../components/common/inputs/input-provider';
 import { InputTypes } from '../../constants/enums';
+import Hero from '../../components/hero';
 const ProductsPage = () => {
   const [viewMode, setViewMode] = useState("grid"); // The display starts in grid view.
   const [selectedCategory, setSelectedCategory] = useState("All");
@@ -58,14 +59,13 @@ const sortOptions = [
   return (
     <PageStyles>
     <div>
-      {/* Upper Deeeeeeeeeeeeeeeev*/}
-      <div className="topHeaderBg">
-        <div className="headerContainer">
-          <h1>Our Products</h1>
-          <p>Explore our range of software, AI tools, hardware kits, and robotics solutions built for modern teams.</p>
-        </div>
-      </div>
-
+      {/* Herooooooooooooooooo*/}
+     <Hero
+  title="Our Products"
+  description="Explore our range of software, AI tools, hardware kits, and robotics solutions built for modern teams."
+  variant="products"
+/>
+      <div className='hero-section'>
       {/* Main content container*/}
       <div className="mainContentWrapper">
         
@@ -124,8 +124,8 @@ const sortOptions = [
         {/* The interchangeable display container based on the current viewMode.*/}
         {filteredProducts?.length === 0 ? (
   
-  <div className="text-center py-5 w-100">
-    <h3 style={{ color: '#888', fontWeight: '500' }}>No products found</h3>
+  <div className="no-product text-center py-5 w-100">
+    <h3>No products found</h3>
   </div>
 ) : viewMode === 'grid' ? (
   
@@ -146,6 +146,7 @@ const sortOptions = [
 )}
 
       </div>
+    </div>
     </div>
     </PageStyles>
   );

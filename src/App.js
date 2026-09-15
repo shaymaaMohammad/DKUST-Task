@@ -1,18 +1,20 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, } from 'react-router-dom';
+import { BrowserRouter as Router,  } from 'react-router-dom';
 import Header from './components/header';
-import Login from './pages/login'; 
-import HomePage from './pages/home'
-import Register from './pages/register';     
 import Footer from './components/footer';
-import ProductsPage from './pages/products';
-import ProductDetailsPage  from './pages/productDetails';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './App.css'; 
-import QuizPage from './pages/quiz';
+import './App.css';
+import { AppProvider } from './context/AppProviders';
+import { Provider } from 'react-redux';
+import { store } from "./store";
+import AppRoutes from './components/app-routes';
+
 
 function App() {
   return (
+    <Provider store={store}> 
+    <AppProvider>
+
     <div className="app-container">
       {/*  */}
       <Router>
@@ -20,28 +22,15 @@ function App() {
         {/* Header  */}
         <Header />
         
-        {/* Routes */}
-        <Routes>
-          {/* Default route redirects to Home */}
-          <Route path="/" element={<HomePage />} />
-          
-          {/* Route for Login page */}
-          <Route path="/login" element={<Login />} />
-          
-          {/* Route for Register page */}
-          <Route path="/register" element={<Register />} />
-          
-          {/* Route for Products page */}
-          <Route path="/products" element={<ProductsPage />} />
-          <Route path="/products/:id" element={<ProductDetailsPage />} />
-          <Route path="/quiz" element={<QuizPage />} />
-        </Routes>
+        <AppRoutes />
         
         {/* Footer */}
         <Footer />
         
       </Router>
     </div>
+    </AppProvider>
+    </Provider>
   );
 }
 

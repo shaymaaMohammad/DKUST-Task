@@ -12,7 +12,7 @@ export const InputStyles = styled.div`
       font-size: 0.85rem;
       font-weight: 600;
       margin-bottom: 0.5rem;
-      color: var(--color-text);
+      color: var(--color-text-dark);
     }
 
     
@@ -56,7 +56,7 @@ export const InputStyles = styled.div`
       left: 1rem;
       top: 50%;
       transform: translateY(-50%); 
-      color: #a0aec0;
+      color: var(--color-text-gray);
       pointer-events: none; 
       z-index: 5;
     }
@@ -65,10 +65,12 @@ export const InputStyles = styled.div`
       left: 1rem;
     }
 
-    .bi-eye {
-      right: 1rem;
-      cursor: pointer;
-      left: auto; 
-    }
+    .bi-eye,
+.bi-eye-slash {
+  right: 1rem;
+  cursor: pointer;
+  left: auto;
+  pointer-events: auto;
+}
   }
 `;

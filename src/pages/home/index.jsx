@@ -1,25 +1,21 @@
 import React from 'react';
 import HomeStyles from './styles'; 
 import CustomButton from '../../components/common/custome-button'; 
+import Hero from '../../components/hero';
 
 const HomePage = () => {
   return (
     <HomeStyles >
-      <section className="hero d-flex align-items-center">
-        <div className="container text-center text-white">
-          <h1 className="fw-semibold">Frequently Asked Questions</h1>
-          <p className="mx-auto opacity-75 mb-4">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-             sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
-               ut aliquip ex ea commodo consequat.
-          </p>
-          
-          <div className="d-inline-block">
-            <CustomButton text="Ask a Question" variant="solid" size="md" />
-          </div>
-        </div>
-      </section>
+      
+     <Hero
+  title="Frequently Asked Questions"
+  description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+  variant="home"
+>
+  <div className="d-inline-block">
+    <CustomButton text="Ask a Question" variant="solid" size="md" />
+  </div>
+</Hero>
       
 
       {/* FAQ / ACCORDION SECTION */}

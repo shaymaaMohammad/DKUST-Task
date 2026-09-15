@@ -1,13 +1,20 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { RegisterStyles } from './styles'; 
 import InputProvider from '../../components/common/inputs/input-provider';
 import { InputTypes } from '../../constants/enums';
 import CustomButton from '../../components/common/custome-button';
 import { useFormik } from 'formik';
 import { signupSchema } from './schema';
+import { useDispatch } from "react-redux";
+import { register } from "../../store/auth/authSlice";
+import SuccessCard from "../../components/success-card";
+import PasswordStrength from '../../components/password-strength';
 
 const Register = () => {
+  const dispatch = useDispatch();
+const navigate = useNavigate();
+
   const formik = useFormik({
      initialValues: {
       firstName: "",
@@ -19,45 +26,12 @@ const Register = () => {
      },
      validationSchema: signupSchema,
      onSubmit: (values) => {
-       console.log(values); 
+        dispatch(register(values));
+        navigate("/register-success", {
+        state: { firstName: values.firstName }
+         });
      }
   });
-
-  const getPasswordStrength = (password) => {
-    if (!password) return { level: 0, text: "", status: "" };
-    let score = 0;
-    if (password.length >= 6) score++;
-    if (/[A-Z]/.test(password) || /[0-9]/.test(password)) score++;
-    if (/[@$!%*?&]/.test(password) && password.length >= 8) score++;
-
-    if (score === 1)
-       return { 
-      level: 1,
-       text: "Weak",
-        status: "weak" 
-      };
-    if (score === 2) 
-      return { 
-    level: 2, 
-    text: "Medium",
-     status: "medium"
-     };
-    if (score === 3) 
-      return { 
-    level: 3, 
-    text: "Strong",
-     status: "strong" 
-    };
-    return { 
-      level: 1,
-       text: "Weak",
-        status: "weak"
-       };
-  };
-
-  const strength = getPasswordStrength(formik.values.password);
-
-
 
   const connectField = (name) => {
     const hasError = formik.touched[name] && formik.errors[name];
@@ -136,24 +110,12 @@ const Register = () => {
                   <InputProvider itemObject={passwordField} />
                 </div>
 
-                {formik.values.password && (
-                  <div className="password-strength-wrapper">
-                    <div className="strength-bar-container">
-                      <div className={`strength-segment ${strength.level >= 1 ? strength.status : ''}`}></div>
-                      <div className={`strength-segment ${strength.level >= 1 ? strength.status : ''}`}></div>
-                      <div className={`strength-segment ${strength.level >= 2 ? strength.status : ''}`}></div>
-                      <div className={`strength-segment ${strength.level >= 3 ? strength.status : ''}`}></div>
-                    </div>
-                    <span className="strength-text" style={{ color: strength.status === 'weak' ? '#ef4444' : strength.status === 'medium' ? '#f59e0b' : '#00ac47' }}>
-                      {strength.text}
-                    </span>
-                  </div>
-                )}
 
                 <div className="form-field-spacing">
                   <InputProvider itemObject={confirmPasswordField} />
                 </div>
-
+               {/* *********************PasswordStrength************ */}
+               <PasswordStrength password={formik.values.password} />
                 <div className="remember-row">
                   <div className="checkbox-container">
                     <input 

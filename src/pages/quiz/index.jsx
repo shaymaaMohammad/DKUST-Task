@@ -4,6 +4,7 @@ import quizData from "../../data/quizData";
 import InputProvider from "../../components/common/inputs/input-provider";
 import CustomButton from "../../components/common/custome-button";
 import Styles from "./styles";
+import Hero from "../../components/hero";
 
 const QuizPage = () => {
   const navigate = useNavigate();
@@ -60,22 +61,16 @@ const QuizPage = () => {
   return (
     <Styles>
 
-      {/* ================= QUIZ HEADER ================= */}
-      <section className="quizHeader">
-        <div className="quizHeaderContent">
-
-          <h1>Test Your Knowledge</h1>
-
-          <p>
-            Answer the questions and check your score.
-          </p>
-
-          <span className="questionCount">
-            Score: {score}/{quizData.length}
-          </span>
-
-        </div>
-      </section>
+      {/* ================= QUIZ Hero  ================= */}
+      <Hero
+  title="Test Your Knowledge"
+  description="Answer the questions and check your score."
+  variant="quiz"
+>
+  <span className="questionCount">
+    Score: {score}/{quizData.length}
+  </span>
+</Hero>
 
 
       {/* ================= QUIZ CONTENT ================= */}

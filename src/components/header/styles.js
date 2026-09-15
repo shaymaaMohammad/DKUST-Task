@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const HeaderWrapper = styled.div`
+  
   .site-header {
     position: relative;
     z-index: 1000;
@@ -23,55 +24,40 @@ export const HeaderWrapper = styled.div`
 
   .header-inner {
     display: flex;
-
     justify-content: space-between;
     align-items: center;
-
     width: 100%;
   }
 
   .logo {
     flex-shrink: 0;
-
     font-size: 1.5rem;
     font-weight: 700;
-
     letter-spacing: 1px;
-
     color: var(--color-white);
   }
 
   .mobile-menu {
     display: flex;
-
     align-items: center;
-
     margin-left: auto;
   }
 
   .nav-list {
     display: flex;
-
     align-items: center;
-
     gap: 1.5rem;
-
     margin: 0;
     padding: 0;
-
     list-style: none;
   }
 
   .nav-item a {
-    color: #a0aec0;
-
+    color: #d1d5dc;
     font-size: 0.75rem;
     font-weight: 600;
-
     letter-spacing: 0.5px;
-
     text-decoration: none;
-
     transition: color 0.3s;
   }
 
@@ -80,7 +66,7 @@ export const HeaderWrapper = styled.div`
   }
 
   .normal-link {
-    color: #a0aec0;
+    color: #d1d5dc;
 
     text-decoration: none;
 
@@ -89,12 +75,12 @@ export const HeaderWrapper = styled.div`
     transition: color 0.2s ease;
 
     &:hover {
-      color: #ffffff;
+      color:var(--color-white);
     }
   }
 
   .active-link {
-    color: #ffffff !important;
+    color: var(--color-green-active) !important;
 
     text-decoration: none;
 
@@ -103,20 +89,36 @@ export const HeaderWrapper = styled.div`
     position: relative;
   }
 
-  .nav-login-wrapper {
+    .nav-login-wrapper {
     display: flex;
-
     gap: 12px;
-
     margin-left: 2rem;
+    align-items: center; 
+  }
+
+  .btn-theme-toggle {
+    background: transparent;
+    border: 1px solid #0db13d;
+    border-radius:30%;
+    font-size: 1.1rem;
+    cursor: pointer;
+    padding: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease;
+
+    &:hover {
+      transform: scale(1.15); 
+    }
   }
 
   .btn-login-outline {
     background-color: transparent;
 
-    color: #0db13d !important;
+    color: var(--color-green) !important;
 
-    border: 1px solid #0db13d;
+    border: 1px solid var(--color-green);
 
     padding: 0.4rem 1.2rem;
 
@@ -134,7 +136,7 @@ export const HeaderWrapper = styled.div`
     transition: all 0.3s ease-in-out;
 
     &:hover {
-      background-color: var(--color-green) !important;
+      background-color: var(--color-green-hover) !important;
 
       color: var(--color-white) !important;
 
@@ -157,7 +159,7 @@ export const HeaderWrapper = styled.div`
 
     background: transparent;
 
-    color: #ffffff;
+    color: var(--color-white);
 
     font-size: 20px;
 
@@ -258,16 +260,32 @@ export const HeaderWrapper = styled.div`
 
       padding: 12px 5px;
 
-      font-size: 0.8rem;
+      font-size: var(--font-size);
     }
 
     .nav-login-wrapper {
       width: 100%;
-
       margin: 18px 0 0;
-
       justify-content: stretch;
+      flex-direction: column; 
+      gap: 12px;
+    
+
+    .btn-theme-toggle {
+     
+      padding: 8px 0; 
+      display: block;
+      width: 100%;
+       border-radius: 6px;
+        &:hover {
+      background-color:var(--color-green-hover); 
+    
+      transform: scale(1); 
     }
+    }
+    
+    }
+  
 
     .btn-login-outline {
       flex: 1;
@@ -276,6 +294,7 @@ export const HeaderWrapper = styled.div`
 
       padding: 0.7rem 0.8rem;
     }
+  }
   }
 
   @media (max-width: 480px) {

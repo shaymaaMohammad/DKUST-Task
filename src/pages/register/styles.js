@@ -7,7 +7,7 @@ export const RegisterStyles = styled.div`
 
   
   .register-root-override {
-    background-color:rgb(26, 58, 110) !important; 
+    background-color:var(--color-navy-hero) !important; 
     width: 100%;
     min-height: 100vh;
     display: flex;
@@ -36,7 +36,7 @@ export const RegisterStyles = styled.div`
   }
 
   .register-card {
-    background: #ffffff !important;
+    background: var(--color-white) !important;
     border-radius: 12px; 
     padding: 40px 35px; 
     border-top: 5px solid #00ac47; 
@@ -45,17 +45,17 @@ export const RegisterStyles = styled.div`
     box-sizing: border-box;
 
     h2 {
-      font-size: 1.85rem; 
+      font-size: 36px; 
       font-weight: 700;
-      color: #0c1527;
+      color:var(--color-text-dark);
       margin: 0 0 6px 0;
       text-align: center;
       letter-spacing: -0.5px;
     }
 
     .sub-title {
-      font-size: 0.88rem;
-      color: #64748b;
+      font-size: var(--font-size);
+      color: var(--color-text-gray);
       margin-bottom: 28px;
       display: block;
       text-align: center;
@@ -84,7 +84,7 @@ export const RegisterStyles = styled.div`
   .input-field-error, 
   div.input-field-error input, 
   input.input-field-error {
-    background-color: #fef2f2 !important; 
+    background-color: var(--color-gray-bg) !important; 
     border-color: #ef4444 !important;
     color: #991b1b !important;
     
@@ -96,7 +96,7 @@ export const RegisterStyles = styled.div`
   
   span.error, .checkbox-error, div.input-field-error + span, form span[style*="color"] {
     color: #ef4444 !important;
-    font-size: 0.78rem !important;
+    font-size: var(--font-size) !important;
     font-weight: 500;
     margin-top: 5px;
     display: block;
@@ -121,18 +121,18 @@ export const RegisterStyles = styled.div`
       height: 16px;
       margin-top: 2px;
       cursor: pointer;
-      accent-color: #00ac47;
+      accent-color:var(--color-green);
     }
 
     label {
-      font-size: 0.85rem;
-      color: #334155;
+      font-size: var(--font-size);
+      color: var(--color-text-gray);
       line-height: 1.4;
       cursor: pointer;
       user-select: none;
 
       span.highlight-link {
-        color: #00ac47;
+        color:var(--color-green);
         font-weight: 600;
         &:hover {
           text-decoration: underline;
@@ -143,8 +143,8 @@ export const RegisterStyles = styled.div`
 
   .divider {
     margin: 24px 0 18px;
-    color: #94a3b8;
-    font-size: 0.82rem;
+    color: var(--color-text-gray);
+    font-size: var(--font-size);
     text-align: center;
     position: relative;
     width: 100%;
@@ -156,14 +156,14 @@ export const RegisterStyles = styled.div`
       left: 0;
       right: 0;
       height: 1px;
-      background-color: #e2e8f0;
+      background-color: var(--color-gray-bg);
       z-index: 1;
     }
 
     span {
-      background-color: #ffffff;
+      background-color:var(--color-white);
       padding: 0 12px;
-      color: #64748b;
+      color: var(--color-text-gray);
       position: relative;
       z-index: 2;
       font-weight: 500;
@@ -178,7 +178,7 @@ export const RegisterStyles = styled.div`
     
     button, .btn, .social-btn {
       flex: 1;
-      font-size: 0.88rem;
+      font-size: var(--font-size);
       padding: 10px 16px;
       font-weight: 500;
     }
@@ -186,12 +186,12 @@ export const RegisterStyles = styled.div`
 
   .signup-text {
     margin: 15px 0 0 0;
-    color: #64748b;
-    font-size: 0.88rem;
+    color:var(--color-text-gray);
+    font-size: var(--font-size);
     text-align: center;
 
     a {
-      color: #00ac47;
+      color:var(--color-green);
       font-weight: 600;
       text-decoration: none;
       margin-left: 4px;
@@ -205,49 +205,18 @@ export const RegisterStyles = styled.div`
   .back-home {
     display: inline-block;
     margin-top: 24px;
-    color: #64748b;
-    font-size: 0.9rem;
+    color: var(--color-text-gray);
+    font-size: var(--font-size);
     text-decoration: none;
     font-weight: 500;
     transition: color 0.2s;
     
     &:hover {
-      color: #0c1527;
+      color:var(--color-text-dark);
       text-decoration: underline;
     }
   }
 
-  .password-strength-wrapper {
-    margin-top: -12px;
-    margin-bottom: 14px;
-    text-align: left;
-    width: 100%;
-
-    .strength-bar-container {
-      display: flex;
-      gap: 5px;
-      margin-bottom: 4px;
-      width: 100%;
-    }
-
-    .strength-segment {
-      height: 4px;
-      flex: 1;
-      background-color: #e2e8f0; 
-      border-radius: 2px;
-      transition: background-color 0.3s ease;
-    }
-
-    .strength-segment.weak { background-color: #ef4444; }   
-    .strength-segment.medium { background-color: #f59e0b; } 
-    .strength-segment.strong { background-color: #00ac47; } 
-
-    .strength-text {
-      font-size: 0.75rem;
-      font-weight: 600;
-      display: block;
-    }
-  }
 
     /* =========================
    TABLET

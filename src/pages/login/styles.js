@@ -10,7 +10,7 @@ export const LoginStyles = styled.div`
   box-sizing: border-box;
   width: 100%;
   overflow-x: hidden;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family:var(--font-primary);
 
   
   .container {
@@ -33,7 +33,7 @@ export const LoginStyles = styled.div`
 
  
   .login-card {
-    background: #ffffff !important;
+    background:var(--color-white) !important;
     border-radius: 16px; 
     padding: 45px 35px; 
     border-top: 5px solid #00ac47; 
@@ -44,15 +44,15 @@ export const LoginStyles = styled.div`
     h2 {
       font-size: 1.8rem; 
       font-weight: 700;
-      color: #0c1527;
+      color:var(--color-txet-dark);
       margin: 0 0 8px 0;
       text-align: center;
       letter-spacing: -0.5px;
     }
 
     .login-subtitle {
-      font-size: 0.88rem;
-      color: #64748b;
+      font-size: var(--font-size);
+      color:var(--color-text-gray);
       margin-bottom: 32px;
       display: block;
       text-align: center;
@@ -79,15 +79,15 @@ export const LoginStyles = styled.div`
       margin-bottom: 6px; 
 
       label {
-        font-size: 0.85rem;
+        font-size:var(--font-size);
         font-weight: 600;
-        color: #1d2230;
+        color: var(--color-txet-dark);
         margin: 0;
       }
 
       #forgotPassword {
-        font-size: 0.82rem;
-        color: #00ac47;
+        font-size:var(--font-size);
+        color: var(--color-green);
         text-decoration: none;
         font-weight: 600;
         
@@ -102,7 +102,7 @@ export const LoginStyles = styled.div`
   .input-field-error, 
   div.input-field-error input, 
   input.input-field-error {
-    background-color: #fef2f2 !important; 
+    background-color:var(--color-gray-bg) !important; 
     border-color: #ef4444 !important; 
     color: #991b1b !important;
     
@@ -114,7 +114,7 @@ export const LoginStyles = styled.div`
  
   span.error, div.input-field-error + span, form span[style*="color"] {
     color: #ef4444 !important;
-    font-size: 0.78rem !important;
+    font-size: var(--font-size) !important;
     font-weight: 500;
     margin-top: 6px;
     display: block;
@@ -134,12 +134,12 @@ export const LoginStyles = styled.div`
       width: 16px;
       height: 16px;
       cursor: pointer;
-      accent-color: #00ac47;
+      accent-color: var(--color-green-active);
     }
 
     label {
-      font-size: 0.85rem;
-      color: #4a5568;
+      font-size:var(--font-size);
+      color:var(--color-text-gray);
       cursor: pointer;
       user-select: none;
     }
@@ -148,8 +148,8 @@ export const LoginStyles = styled.div`
  
   .divider {
     margin: 24px 0 20px;
-    color: #94a3b8;
-    font-size: 0.82rem;
+    color: var(--color-text-gray);
+    font-size: var(--font-size);
     text-align: center;
     position: relative;
     width: 100%;
@@ -161,14 +161,14 @@ export const LoginStyles = styled.div`
       left: 0;
       right: 0;
       height: 1px;
-      background-color: #e2e8f0;
+      background-color: var(--color-gray-bg);
       z-index: 1;
     }
 
     span {
-      background-color: #ffffff;
+      background-color: var(--color-white);
       padding: 0 12px;
-      color: #64748b;
+      color: var(--color-text-gray);
       position: relative;
       z-index: 2;
       font-weight: 500;
@@ -184,12 +184,12 @@ export const LoginStyles = styled.div`
     
     button, .btn, .social-btn {
       flex: 1;
-      font-size: 0.88rem;
+      font-size:var(--font-size);
       padding: 10px 16px;
       font-weight: 500;
-      background: #ffffff;
-      border: 1px solid #e2e8f0;
-      color: #334155;
+      background:var(--color-white);
+      border: 1px solid var(--color-gray-bg);
+      color:var(--color-text-gray);
       box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
     }
   }
@@ -197,12 +197,12 @@ export const LoginStyles = styled.div`
  
   .signup-text {
     margin: 15px 0 0 0;
-    color: #64748b;
-    font-size: 0.88rem;
+    color: var(--color-text-gray);
+    font-size: var(--font-size);
     text-align: center;
 
     a {
-      color: #00ac47;
+      color:var(--color-green);
       font-weight: 600;
       text-decoration: none;
       margin-left: 4px;
@@ -217,13 +217,13 @@ export const LoginStyles = styled.div`
   .back-home {
     display: inline-block;
     margin-top: 25px;
-    color: #94a3b8; 
-    font-size: 0.92rem;
+    color:var(--color-text-gray); 
+    font-size: var(--font-size);
     text-decoration: underline;
     transition: color 0.2s;
     
     &:hover {
-      color: #ffffff;
+      color: var(--color-white);
     }
   }
 @media (max-width: 480px) {
@@ -238,7 +238,7 @@ export const LoginStyles = styled.div`
     }
 
     .login-subtitle {
-      font-size: 0.8rem;
+      font-size: 0.7rem;
       margin-bottom: 25px;
     }
   }
@@ -264,11 +264,11 @@ export const LoginStyles = styled.div`
   }
 
   .signup-text {
-    font-size: 0.8rem;
+    font-size: 0.7rem;
   }
 
   .back-home {
-    font-size: 0.85rem;
+    font-size: 0.75rem;
     margin-top: 20px;
   }
 }

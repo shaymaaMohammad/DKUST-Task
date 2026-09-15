@@ -1,13 +1,18 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { LoginStyles } from './styles'; 
 import InputComponent from '../../components/common/inputs/input-component'; 
 import CustomButton from '../../components/common/custome-button';
 import { useFormik } from 'formik';
 import { loginSchema } from './schema';
+import { useDispatch, useSelector } from 'react-redux';
+import { login } from '../../store/auth/authSlice';
+import LoginSuccess from '../../components/success-card';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Login = () => {
-  
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+  const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
   const formik = useFormik({
      initialValues: {
       email: "",
@@ -16,12 +21,15 @@ const Login = () => {
      },
      validationSchema: loginSchema,
      onSubmit: (values) => {
-       
-       console.log(values);
+         dispatch(login(values));
+  navigate("/login-success");
      }
   });
 
- 
+  if (isAuthenticated) {
+    return <LoginSuccess />;
+  }
+
   const connectField = (name) => {
     const hasError = formik.touched[name] && formik.errors[name];
     return {
@@ -83,7 +91,6 @@ const Login = () => {
                   </div>
                   
                   <InputComponent itemObject={passwordField}>
-                    <i className="bi bi-eye"></i>
                   </InputComponent>
                 </div>
               </div>

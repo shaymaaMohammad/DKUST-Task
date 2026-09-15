@@ -2,7 +2,17 @@ import React from 'react';
 import { FcGoogle } from 'react-icons/fc';
 import { ButtonContainer } from './styles'; 
 
-const CustomButton = ({ text, type = "button", className = "custom-btn", onClick, icon, imgSrc, variant = "solid", size = "md" }) => {
+const CustomButton = (
+  {
+     text,
+      type = "button",
+       className = "custom-btn",
+        onClick,
+         icon,
+          imgSrc,
+           variant = "solid",
+            size = "md" 
+          }) => {
   return (
     <ButtonContainer variant={variant} size={size}>
       <button type={type} className={`custom-btn ${className}`} onClick={onClick}>

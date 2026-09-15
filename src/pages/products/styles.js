@@ -4,41 +4,6 @@ const PageStyles = styled.div`
   width: 100%;
   overflow-x: hidden;
 
-  .topHeaderBg {
-    width: 100%;
-    background-color: var(--color-navy-hero);
-    color: #ffffff;
-    text-align: center;
-  }
-
-  .headerContainer {
-    width: 100%;
-    max-width: 1200px;
-    min-height: 150px;
-    margin: 0 auto;
-    padding: 0 24px;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
-    h1 {
-      margin: 0 0 8px;
-      font-size: clamp(28px, 3vw, 34px);
-      font-weight: 700;
-      line-height: 1.2;
-    }
-
-    p {
-      max-width: 620px;
-      margin: 0;
-      font-size: 13px;
-      line-height: 1.7;
-      color: rgba(255, 255, 255, 0.9);
-    }
-  }
-
  .mainContentWrapper {
   max-width: 1200px;
   margin: 0 auto;
@@ -47,7 +12,6 @@ const PageStyles = styled.div`
 
   .toolbarRow {
     width: 100%;
-
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -73,10 +37,10 @@ const PageStyles = styled.div`
       border: 1px solid #dfe5eb;
       border-radius: 20px;
 
-      background-color: #ffffff;
-      color: #6b7280;
+      background-color:var(--color-white);
+      color: var(--color-text-gray);
 
-      font-size: 11px;
+      font-size: var(--font-size);
       font-weight: 600;
 
       cursor: pointer;
@@ -88,13 +52,13 @@ const PageStyles = styled.div`
         transform 0.2s ease;
 
       &.active {
-        background-color: #20a464;
-        border-color: #20a464;
-        color: #ffffff;
+        background-color: var(--color-green-active);
+        border-color:var(--color-green-active);
+        color:var(--color-white);
       }
 
       &:hover:not(.active) {
-        background-color: #f8fafc;
+        background-color:var(--color-gray-bg);
         border-color: #cbd5e1;
       }
 
@@ -123,11 +87,11 @@ const PageStyles = styled.div`
     border: 1px solid #dfe5eb;
     border-radius: 5px;
 
-    background-color: #ffffff;
+    background-color:var(--color-white);
 
-    color: #6b7280;
+    color:var(--color-text-gray);
 
-    font-size: 11px;
+    font-size: var(--font-size);
     font-weight: 500;
 
     cursor: pointer;
@@ -138,7 +102,7 @@ const PageStyles = styled.div`
       box-shadow 0.2s ease;
 
     &:focus {
-      border-color: #20a464;
+      border-color: var(--color-green-active);
       box-shadow: 0 0 0 3px rgba(32, 164, 100, 0.08);
     }
   }
@@ -154,7 +118,7 @@ const PageStyles = styled.div`
     border: 1px solid #dfe5eb;
     border-radius: 5px;
 
-    background-color: #ffffff;
+    background-color: var(--color-white);
 
     button {
       width: 34px;
@@ -167,9 +131,9 @@ const PageStyles = styled.div`
 
       background-color: transparent;
 
-      color: #94a3b8;
+      color:var(--color-text-gray);
 
-      font-size: 14px;
+      font-size: var(--font-size);
 
       cursor: pointer;
 
@@ -178,13 +142,13 @@ const PageStyles = styled.div`
         color 0.2s ease;
 
       &.active {
-        background-color: #20a464;
-        color: #ffffff;
+        background-color:var(--color-green-active);
+        color: var(--color-white);
       }
 
       &:hover:not(.active) {
-        background-color: #f8fafc;
-        color: #475569;
+        background-color: var(--color-gray-bg);
+        color:var(--color-text-gray);
       }
 
       &:first-child {
@@ -194,8 +158,8 @@ const PageStyles = styled.div`
   }
 
 .productCountText {
-  color: #888;
-  font-size: 13px;
+  color: var(--color-text-gray);
+  font-size: var(--font-size);
   margin: 0 0 24px;
   font-weight: 500;
 }
@@ -203,6 +167,10 @@ const PageStyles = styled.div`
     --bs-gutter-x: 20px;
     --bs-gutter-y: 20px;
   }
+.no-product h3{
+  color:var(--color-text-gray);
+  font-weight: 500;
+}
 
  /* =========================
     TABLET
@@ -229,21 +197,6 @@ const PageStyles = styled.div`
 ========================= */
 
 @media (max-width: 768px) {
-
-  .headerContainer {
-    min-height: 135px;
-    padding: 0 20px;
-
-    h1 {
-      font-size: 28px;
-    }
-
-    p {
-      font-size: 12px;
-      max-width: 580px;
-    }
-  }
-
   .mainContentWrapper {
     padding: 16px 16px 50px;
   }
@@ -275,21 +228,6 @@ const PageStyles = styled.div`
 ========================= */
 
 @media (max-width: 576px) {
-
-  .headerContainer {
-    min-height: 125px;
-    padding: 0 16px;
-
-    h1 {
-      font-size: 25px;
-    }
-
-    p {
-      font-size: 11px;
-      line-height: 1.6;
-    }
-  }
-
   .mainContentWrapper {
     padding: 14px 12px 45px;
   }
@@ -366,17 +304,6 @@ const PageStyles = styled.div`
 ========================= */
 
 @media (max-width: 375px) {
-
-  .headerContainer {
-    h1 {
-      font-size: 23px;
-    }
-
-    p {
-      font-size: 10px;
-    }
-  }
-
   .filterBar {
     button {
       padding: 0 10px;

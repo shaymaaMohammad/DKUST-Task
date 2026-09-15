@@ -19,7 +19,7 @@ const productsArray = [
     rating: 4.8,
     reviewsCount: 124,
     badge: "Best Seller",
-    colorBg: "#1e3a8a",
+    colorBg: "#1a3a6e",
   },
 
   {
@@ -42,7 +42,7 @@ const productsArray = [
     rating: 4.6,
     reviewsCount: 38,
     badge: "New",
-    colorBg: "#065f46",
+    colorBg: "#0d3320",
   },
 
   {
@@ -65,7 +65,7 @@ const productsArray = [
     rating: 4.5,
     reviewsCount: 210,
     badge: "Popular",
-    colorBg: "#4c1d95",
+    colorBg: "#3a1a6e",
   },
 
   {
@@ -88,7 +88,7 @@ const productsArray = [
     rating: 4.7,
     reviewsCount: 89,
     badge: null,
-    colorBg: "#070b13",
+    colorBg: "#1a3a6e",
   },
 
   {
@@ -111,7 +111,7 @@ const productsArray = [
     rating: 4.3,
     reviewsCount: 56,
     badge: "Sale",
-    colorBg: "#603f09",
+    colorBg: "#3a1a0d",
   },
 
   {
@@ -134,7 +134,7 @@ const productsArray = [
     rating: 4.9,
     reviewsCount: 305,
     badge: "Top Rated",
-    colorBg: "#293653",
+    colorBg: "#0d1b3e",
   },
 ];
 

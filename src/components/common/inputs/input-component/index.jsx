@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { InputStyles } from './styles'; 
+import { InputTypes } from '../../../../constants/enums';
 
 const InputComponent = ({ itemObject, children }) => {
-  
+  const [showPassword, setShowPassword] = useState(false);
   const { 
     fieldLabel, 
     fieldValue, 
@@ -23,7 +24,7 @@ const InputComponent = ({ itemObject, children }) => {
           {icon && <i className={`bi bi-${icon}`}></i>}
           
           <input 
-            type={type}
+            type={type === InputTypes.PASSWORD && showPassword ? "text" : type}
             placeholder={placeholder}
             value={fieldValue || ''}
             onChange={(e) => onChangeFunction?.(e.target.value)}
@@ -31,7 +32,12 @@ const InputComponent = ({ itemObject, children }) => {
             className={errorMessage ? 'input-error' : ''}
             required
           />
-          
+          {type === InputTypes.PASSWORD && (
+         <i
+           className={`bi ${showPassword ? "bi-eye-slash" : "bi-eye"}`}
+            onClick={() => setShowPassword(!showPassword)}
+           ></i>
+           )}
          
           {children}
         </div>

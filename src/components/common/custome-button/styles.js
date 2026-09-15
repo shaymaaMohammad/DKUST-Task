@@ -22,35 +22,35 @@ export const ButtonContainer = styled.div`
 
     /* Color control based on the variant */
     background-color: ${props => 
-      props.variant === 'outline' ? '#ffffff' : 'var(--color-green, #2ec4b6)'};
+      props.variant === 'outline' ? 'var(--color-white)' : 'var(--color-green)'};
     color: ${props => 
-      props.variant === 'outline' ? '#1a253c' : 'var(--color-white, #ffffff)'};
+      props.variant === 'outline' ? 'var(--color-text-dark)' : 'var(--color-white)'};
     border: ${props => 
       props.variant === 'outline' ? '1px solid #eaeaea' : 'none'};
 
     &:hover {
       background-color: ${props => 
-        props.variant === 'outline' ? '#f8f9fa' : 'var(--color-green-hover, #249b8f)'};
+        props.variant === 'outline' ? '#f8f9fa' : 'var(--color-green-hover)'};
       border-color: ${props => props.variant === 'outline' ? '#ccc' : 'none'};
     }
   }
 
   /* Butttttton Social  */
   .custom-btn.social-btn {
-    background-color: var(--color-white) !important; 
-    color: var(--color-text-gray) !important; 
-    border: 1px solid #e5e5e5 !important; 
+    background-color: var(--color-white); 
+    color: var(--color-text-gray) ; 
+    border: 1px solid #e5e5e5 ; 
     width: 100%;
     height: 44px;
     
     &:hover {
-      background-color: var(--color-gray-bg) !important;
-      color: var(--color-text-dark) !important;
+      background-color: var(--color-gray-bg) ;
+      color: var(--color-text-dark) ;
     }
   }
 
   .social-btn .bi-facebook {
-    color: #1877F2 !important;
+    color:  var(--color-navy-hero);
     font-size: 18px;
   }
 

@@ -33,9 +33,9 @@ const RatingStyles = {
     margin-bottom: 0;
 
     span.review-text {
-      color: #64748b;
+      color:var(--color-text-gray);
       margin-left: 6px;
-      font-size: 11px;
+      font-size: var(--font-size);
       white-space: nowrap;
     }
   `
