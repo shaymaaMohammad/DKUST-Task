@@ -13,7 +13,7 @@ export const RegisterStyles = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 40px 20px;
+    padding: 110px 20px 40px;
     box-sizing: border-box;
     overflow-x: hidden;
   }
@@ -225,7 +225,7 @@ export const RegisterStyles = styled.div`
 @media (max-width: 768px) {
 
   .register-root-override {
-    padding: 30px 16px;
+     padding: 90px 16px 30px;
     align-items: flex-start;
   }
 
@@ -270,7 +270,7 @@ export const RegisterStyles = styled.div`
 @media (max-width: 480px) {
 
   .register-root-override {
-    padding: 20px 12px;
+     padding: 90px 12px 20px;
     align-items: flex-start;
   }
 
@@ -405,7 +405,7 @@ export const RegisterStyles = styled.div`
 @media (max-width: 360px) {
 
   .register-root-override {
-    padding: 12px 8px;
+     padding: 80px 8px 12px;
   }
 
   .register-card {

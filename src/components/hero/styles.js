@@ -76,7 +76,7 @@ const Styles = styled.div`
 /* ******************Productttttttttt**************** */
 .hero-products {
   min-height: 170px;
-  padding: 0 24px;
+   padding: 66px 24px 0;
 }
 
 .hero-products .hero-content {
@@ -128,7 +128,8 @@ const Styles = styled.div`
   }
   .hero-products {
     min-height: 135px;
-    padding: 0 20px;
+     padding: 66px 20px 0;
+  box-sizing: border-box;
   }
 
   .hero-products h1 {
@@ -177,7 +178,8 @@ const Styles = styled.div`
   }
    .hero-products {
     min-height: 125px;
-    padding: 0 16px;
+   padding: 66px 16px 0;
+  box-sizing: border-box;
   }
 
   .hero-products h1 {

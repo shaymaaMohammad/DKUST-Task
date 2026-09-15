@@ -7,6 +7,8 @@ import PageStyles  from './styles';
 import InputProvider from '../../components/common/inputs/input-provider';
 import { InputTypes } from '../../constants/enums';
 import Hero from '../../components/hero';
+
+
 const ProductsPage = () => {
   const [viewMode, setViewMode] = useState("grid"); // The display starts in grid view.
   const [selectedCategory, setSelectedCategory] = useState("All");
@@ -88,12 +90,12 @@ const sortOptions = [
           {/* Dropdownnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn*/}
           <div className="rightControls">
             <InputProvider
-  type={InputTypes.SELECT}
-  fieldValue={sortBy}
-  onChangeFunction={setSortBy}
-  options={sortOptions}
-  className="sortSelect"
-/>
+             type={InputTypes.SELECT}
+             fieldValue={sortBy}
+            onChangeFunction={setSortBy}
+            options={sortOptions}
+            className="sortSelect"
+             />
 
             <div className="viewToggleGroup">
               <button 

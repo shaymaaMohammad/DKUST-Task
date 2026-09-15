@@ -3,7 +3,10 @@ import styled from 'styled-components';
 export const HeaderWrapper = styled.div`
   
   .site-header {
-    position: relative;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
     z-index: 1000;
 
     background-color: var(--color-navy-dark);

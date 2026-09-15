@@ -12,7 +12,7 @@ const Styles = styled.div`
   .breadcrumbContainer {
     background-color:var(--color-white);
     width: 100%;
-    padding: 20px 0;
+     padding: 86px 0 20px;
     border-bottom: 1px solid #f1f5f9;
   }
 
@@ -131,7 +131,7 @@ const Styles = styled.div`
      display: flex; 
      flex-direction: column; 
     margin: 0 0 20px 0;
-  gap: 8px;
+    gap: 8px;
     li {
        display: flex; 
       align-items: center; 
@@ -175,9 +175,6 @@ const Styles = styled.div`
     font-size: 12px;
   }
 }
-  
-
-
 
 .qtySelector {
   display: flex;
@@ -355,7 +352,7 @@ const Styles = styled.div`
 
 @media (max-width: 576px) {
   .breadcrumbContainer {
-    padding: 14px 0;
+     padding: 76px 0 14px;
   }
 
   .breadcrumb {

@@ -6,7 +6,7 @@ export const LoginStyles = styled.div`
   align-items: center;
   min-height: 100vh;
   background-color: var( --color-navy-hero); 
-  padding: 40px 20px;
+ padding: 110px 20px 40px;
   box-sizing: border-box;
   width: 100%;
   overflow-x: hidden;
@@ -227,7 +227,7 @@ export const LoginStyles = styled.div`
     }
   }
 @media (max-width: 480px) {
-  padding: 20px 12px;
+   padding: 90px 12px 20px;
 
   .login-card {
     padding: 30px 20px;
