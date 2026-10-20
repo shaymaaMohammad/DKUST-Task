@@ -1,17 +1,19 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
-const ListStyles = styled.div` 
-  .cardWrapper { 
+const ListStyles = styled.div`
+  .cardWrapper {
     background: var(--color-white);
     border: 1px solid #eaeaea;
     border-radius: 12px;
     overflow: hidden;
-    display: flex; 
+    display: flex;
     align-items: center;
     width: 100%;
     margin-bottom: 20px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition:
+      transform 0.2s ease,
+      box-shadow 0.2s ease;
 
     &:hover {
       transform: translateX(5px);
@@ -19,13 +21,12 @@ const ListStyles = styled.div`
     }
   }
   .mainCardListIcon {
-  font-size: 2.5rem;
-  color: var(--color-white);
-}
-
+    font-size: 2.5rem;
+    color: var(--color-white);
+  }
 
   .imageContainer {
-    background-color: ${props => props.bgCol || '#1d3557'};
+    background-color: ${(props) => props.bgCol || "#1d3557"};
     width: 200px;
     height: 160px;
     position: relative;
@@ -37,7 +38,7 @@ const ListStyles = styled.div`
     flex-shrink: 0;
   }
 
-  .badge {
+  /* .badge {
     position: absolute;
     top: 12px;
     left: 12px;
@@ -47,18 +48,18 @@ const ListStyles = styled.div`
     border-radius: 20px;
     font-size: var(--font-size);
     font-weight: bold;
-  }
+  } */
 
   .cardContent {
     padding: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    flex-grow: 1; 
+    flex-grow: 1;
   }
 
   .categoryText {
-    font-size:var(--font-size);
+    font-size: var(--font-size);
     color: var(--color-text-gray);
     text-transform: uppercase;
     margin-bottom: 4px;
@@ -67,7 +68,7 @@ const ListStyles = styled.div`
   .productTitle {
     font-size: 16px;
     font-weight: 700;
-    color:var(--color-text-gray);
+    color: var(--color-text-gray);
     margin: 0 0 6px 0;
   }
 
@@ -76,7 +77,7 @@ const ListStyles = styled.div`
     color: var(--color-text-gray);
     line-height: 1.4;
     margin-bottom: 10px;
-    max-width: 600px; 
+    max-width: 600px;
   }
 
   .rightSideAction {
@@ -95,7 +96,7 @@ const ListStyles = styled.div`
     font-size: 16px;
     font-weight: 700;
     color: var(--color-green);
-    
+
     span {
       font-size: var(--font-size);
       color: var(--color-text-gray);
@@ -107,8 +108,6 @@ const ListStyles = styled.div`
     display: flex;
     gap: 8px;
   }
-  
-  
 `;
 
 export default ListStyles;
