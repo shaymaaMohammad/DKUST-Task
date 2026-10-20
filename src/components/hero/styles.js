@@ -375,24 +375,6 @@ const Styles = styled.div`
       }
     }
   }
-
-  [dir="rtl"] & {
-    .hero-home {
-      .hero-text-side {
-        align-items: flex-start;
-        text-align: right;
-        h1 {
-          text-align: right;
-        }
-        p {
-          text-align: right;
-        }
-        .hero-buttons-wrapper {
-          justify-content: flex-start;
-        }
-      }
-    }
-  }
 `;
 
 export default Styles;
