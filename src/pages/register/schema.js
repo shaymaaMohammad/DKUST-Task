@@ -1,23 +1,24 @@
 import * as Yup from "yup";
+import i18next from "i18next";
 
-export const signupSchema = Yup.object({
-  firstName: Yup.string()
-    .trim()
-    .required("First name is required."),
-  lastName: Yup.string()
-    .trim()
-    .required("Last name is required."),
-  email: Yup.string()
-    .trim()
-    .required("Email is required.")
-    .email("Please enter a valid email address."),
-  password: Yup.string()
-    .trim()
-    .required("Password is required.")
-    .min(6, "Password must be at least 6 characters."),
-  confirmPassword: Yup.string()
-    .required("Please confirm your password.")
-    .oneOf([Yup.ref("password")], "Password and confirm password must match."),
-  agreeTerms: Yup.boolean()
-    .oneOf([true], "You must agree to the terms before continuing.")
-});
+export const signupSchema = () =>
+  Yup.object({
+    firstName: Yup.string()
+      .trim()
+      .required(() => i18next.t("err_firstname_required")),
+    lastName: Yup.string()
+      .trim()
+      .required(() => i18next.t("err_lastname_required")),
+    email: Yup.string()
+      .trim()
+      .required(() => i18next.t("err_email_required"))
+      .email(() => i18next.t("err_email_invalid")),
+    password: Yup.string()
+      .trim()
+      .required(() => i18next.t("err_password_required"))
+      .min(6, () => i18next.t("err_password_min")),
+    confirmPassword: Yup.string()
+      .required(() => i18next.t("err_confirm_password_required"))
+      .oneOf([Yup.ref("password")], () => i18next.t("err_password_match")),
+    agreeTerms: Yup.boolean().oneOf([true], () => i18next.t("err_agree_terms")),
+  });

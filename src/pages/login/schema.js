@@ -1,12 +1,15 @@
 import * as Yup from "yup";
 
-export const loginSchema = Yup.object({
-  email: Yup.string()
-    .trim()
-    .required("Email is required.")
-    .email("Please enter a valid email address."),
-  password: Yup.string()
-    .trim()
-    .required("Password is required.")
-    .min(6, "Password must be at least 6 characters."),
-});
+import i18next from "i18next";
+
+export const loginSchema = () =>
+  Yup.object({
+    email: Yup.string()
+      .trim()
+      .required(() => i18next.t("err_email_required"))
+      .email(() => i18next.t("err_email_invalid")),
+    password: Yup.string()
+      .trim()
+      .required(() => i18next.t("err_password_required"))
+      .min(6, () => i18next.t("err_password_min")),
+  });

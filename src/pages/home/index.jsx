@@ -1,88 +1,95 @@
-import React from 'react';
-import HomeStyles from './styles'; 
-import CustomButton from '../../components/common/custome-button'; 
-import Hero from '../../components/hero';
+import React from "react";
+import { HomeWrapper } from "./styles";
+import CustomButton from "../../components/common/custome-button";
+import Hero from "../../components/hero";
+import AppTemplate from "../../components/app-template";
+import { useTranslation } from "react-i18next";
+import TrendingProducts from "../../components/trendingProducts";
+import Features from "../../components/Features";
+import GetStarted from "../../components/GetStarted";
+import i18next from "i18next";
+import HeroStatCard from "../../components/heroStatCard";
 
 const HomePage = () => {
+  const { t } = useTranslation();
+  const currentLang = i18next.language || "ar";
+
+  const statsData = [
+    {
+      id: 1,
+      value: 12000,
+      suffix: "+",
+      isFormatted: true,
+      labelKey: "hero.stat_clients",
+    },
+    {
+      id: 2,
+      value: 340,
+      suffix: "+",
+      isFormatted: false,
+      labelKey: "hero.stat_projects",
+    },
+    {
+      id: 3,
+      value: 98,
+      suffix: "%",
+      isFormatted: false,
+      labelKey: "hero.stat_satisfaction",
+    },
+    {
+      id: 4,
+      value: "24/7",
+      suffix: "",
+      isFormatted: false,
+      labelKey: "hero.stat_support",
+    },
+  ];
   return (
-    <HomeStyles >
-      
-     <Hero
-  title="Frequently Asked Questions"
-  description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-  variant="home"
->
-  <div className="d-inline-block">
-    <CustomButton text="Ask a Question" variant="solid" size="md" />
-  </div>
-</Hero>
-      
-
-      {/* FAQ / ACCORDION SECTION */}
-      <section className="faq-section py-5">
-        <div className="container text-center">
-          <h2 className="fw-semibold mb-3">Generally Asked Question</h2>
-          <p className="mx-auto text-muted mb-5">
-             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-          </p>
-          
-          <div className="accordion accordion-flush mx-auto text-start" id="faqAccordion" style={{maxWidth :'800px'}}>
-            <div className="accordion-item mb-3 shadow-sm border-0 rounded">
-              <h2 className="accordion-header">
-                <button className="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
-                  What services do you offer?
-                </button>
-              </h2>
-              <div id="faq1" className="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                <div className="accordion-body text-muted">
-                  We offer a wide range of technology services including web development, machine learning solutions,
-                   robotics engineering, industrial consulting, and data analytics. 
-                  Our team of experts is dedicated to delivering high-quality solutions tailored to your business needs.
-                </div>
-              </div>
+    <AppTemplate pageTitle="home">
+      <HomeWrapper>
+        <Hero
+          variant="home"
+          badgeText={t("hero.badge")}
+          description={t("hero.description")}
+          title={
+            currentLang === "en" ? (
+              <>
+                Powering the Future with{" "}
+                <span className="green-text">Smart Technology</span>
+              </>
+            ) : (
+              <>
+                تمكين المستقبل باستخدام{" "}
+                <span className="green-text">التكنولوجيا الذكية</span>
+              </>
+            )
+          }
+          statsGrid={
+            <div className="hero-stats-grid">
+              {statsData.map((stat) => (
+                <HeroStatCard
+                  key={stat.id}
+                  value={stat.value}
+                  suffix={stat.suffix}
+                  isFormatted={stat.isFormatted}
+                  label={t(stat.labelKey)}
+                />
+              ))}
             </div>
-
-            <div className="accordion-item mb-3 shadow-sm border-0 rounded">
-              <h2 className="accordion-header">
-                <button className="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
-                  How can I contact your team?
-                </button>
-              </h2>
-              <div id="faq2" className="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                <div className="accordion-body text-muted">
-                  You can reach our team through the contact form on our website,
-                   by emailing info@dkust.com, or by calling +1 234 567 8900. 
-                  Our support team is available Monday through Friday, 9 AM to 6 PM EST.
-                </div>
-              </div>
-            </div>
-
-            <div className="accordion-item mb-3 shadow-sm border-0 rounded">
-              <h2 className="accordion-header">
-                <button className="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
-                  Do you provide technical support?
-                </button>
-              </h2>
-              <div id="faq3" className="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                <div className="accordion-body text-muted">
-                  Yes, we provide comprehensive technical support for all our services.
-                   We offer different support tiers including standard email support, priority phone support,
-                   and dedicated account management for enterprise clients.
-                </div>
-              </div>
-            </div>
-
-          </div>
-          <div className='container text-center '>
-          <p>Ready to test your knowledge?</p>
-          <div className="d-inline-block">
-           <CustomButton text="TAKE THE QUIZ" variant="solid" size="sm"
-           />
-           </div>
-          </div>
-        </div>
-      </section>
-    </HomeStyles>
+          }
+        >
+          <CustomButton
+            text={t("hero.btn_explore")}
+            variant="solid"
+            icon="bi bi-cart"
+          />
+          <CustomButton text={t("hero.btn_quiz")} variant="outline" />
+        </Hero>
+        <TrendingProducts />
+        <Features />
+        <GetStarted />
+      </HomeWrapper>
+    </AppTemplate>
   );
 };
 

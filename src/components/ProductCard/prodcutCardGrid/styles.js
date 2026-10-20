@@ -1,93 +1,91 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 const ProductStyles = styled.div`
   width: 100%;
   height: 100%;
 
   .cardWrapper {
-  width: 100%;
-  height: 100%;
+    width: 100%;
+    height: 100%;
 
-  display: flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: column;
 
-  overflow: hidden;
+    overflow: hidden;
 
-  background: var(--color-white);
+    background: var(--color-white);
 
-  border: 1px solid #e5e7eb;
-  border-radius: 10px;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
 
-  box-shadow: 0 3px 8px rgba(15, 23, 42, 0.04);
+    box-shadow: 0 3px 8px rgba(15, 23, 42, 0.04);
 
-  transition:
-    transform 0.2s ease,
-    box-shadow 0.2s ease;
+    transition:
+      transform 0.2s ease,
+      box-shadow 0.2s ease;
 
-  &:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 18px rgba(15, 23, 42, 0.08);
+    &:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 18px rgba(15, 23, 42, 0.08);
+    }
   }
-}
 
   /* =========================
      PRODUCT IMAGE
   ========================= */
 
- .imageContainer {
-  width: 100%;
-  height: 135px;
+  .imageContainer {
+    width: 100%;
+    height: 135px;
 
-  position: relative;
+    position: relative;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-  flex-shrink: 0;
+    flex-shrink: 0;
 
-  background-color: ${({ bgCol }) =>
-    bgCol || '#1d3557'};
-}
+    background-color: ${({ bgCol }) => bgCol || "#1d3557"};
+  }
 
- .mainCardGridIcon {
-  color: var(--color-white);
-  font-size: 2.4rem;
-  line-height: 1;
-}
-  
+  .mainCardGridIcon {
+    color: var(--color-white);
+    font-size: 2.4rem;
+    line-height: 1;
+  }
 
   /* =========================
      BADGE
   ========================= */
 
- .badge {
-  position: absolute;
+  /* .badge {
+    position: absolute;
 
-  top: 10px;
-  left: 10px;
+    top: 10px;
+    left: 10px;
 
-  padding: 4px 10px;
+    padding: 4px 10px;
 
-  border-radius: 20px;
+    border-radius: 20px;
 
-  color: var(--color-white);
+    color: var(--color-white);
 
-  font-size:var(--font-size);
-  font-weight: 700;
-  line-height: 1;
+    font-size: var(--font-size);
+    font-weight: 700;
+    line-height: 1;
 
-  white-space: nowrap;
+    white-space: nowrap;
 
-  background-color: var(--color-green);
-}
+    background-color: var(--color-green);
+  }
   .badge.best-seller,
   .badge.new,
   .badge.popular,
   .badge.sale,
   .badge.top-rated {
     background-color: var(--color-green);
-  }
+  } */
 
   /* =========================
      CONTENT
@@ -128,23 +126,23 @@ const ProductStyles = styled.div`
     line-height: 1.35;
   }
 
- .productDescription {
-  display: -webkit-box;
+  .productDescription {
+    display: -webkit-box;
 
-  height: 38px;
+    height: 38px;
 
-  margin: 0 0 10px;
+    margin: 0 0 10px;
 
-  overflow: hidden;
+    overflow: hidden;
 
-  color: var(--color-text-gray);
+    color: var(--color-text-gray);
 
-  font-size:var(--font-size);
-  line-height: 19px;
+    font-size: var(--font-size);
+    line-height: 19px;
 
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
-}
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+  }
 
   /* =========================
      PRODUCT RATING
@@ -158,111 +156,111 @@ const ProductStyles = styled.div`
      FOOTER
   ========================= */
 
- .cardFooter {
-  margin-top: auto;
+  .cardFooter {
+    margin-top: auto;
 
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
-  gap: 14px;
-}
-
- .priceText {
-  flex-shrink: 0;
-
-  color: #00a63e;
-
-  font-size: 16px;
-  font-weight: 700;
-
-  white-space: nowrap;
-
-  span {
-    margin-left: 2px;
-
-    color:var(--color-text-gray);
-
-    font-size:var(--font-size);
-    font-weight: 500;
+    gap: 14px;
   }
-}
+
+  .priceText {
+    flex-shrink: 0;
+
+    color: #00a63e;
+
+    font-size: 16px;
+    font-weight: 700;
+
+    white-space: nowrap;
+
+    span {
+      margin-left: 2px;
+
+      color: var(--color-text-gray);
+
+      font-size: var(--font-size);
+      font-weight: 500;
+    }
+  }
 
   /* =========================
      BUTTONS
   ========================= */
 
- .buttonGroup {
-  display: flex;
-  align-items: center;
+  .buttonGroup {
+    display: flex;
+    align-items: center;
 
-  justify-content: flex-end;
+    justify-content: flex-end;
 
-  gap: 7px;
+    gap: 7px;
 
-  flex-shrink: 0;
-}
- .buttonGroup > div {
-  width: auto;
-}
+    flex-shrink: 0;
+  }
+  .buttonGroup > div {
+    width: auto;
+  }
 
   .buttonGroup .custom-btn {
-  width: auto;
+    width: auto;
 
-  height: 30px;
+    height: 30px;
 
-  padding: 0 14px;
+    padding: 0 14px;
 
-  border-radius: 4px;
+    border-radius: 4px;
 
-  font-size: var(--font-size);
+    font-size: var(--font-size);
 
-  white-space: nowrap;
-}
+    white-space: nowrap;
+  }
 
-/* =========================
+  /* =========================
    MINIMAL CARD
 ========================= */
 
-.minimalCard {
-  min-height: 255px;
+  .minimalCard {
+    min-height: 255px;
 
-  .imageContainer {
-    height: 120px;
+    .imageContainer {
+      height: 120px;
+    }
+
+    .mainCardGridIcon {
+      font-size: 2.2rem;
+    }
+
+    .cardContent {
+      padding: 15px 16px 16px;
+    }
+
+    .categoryText {
+      margin-bottom: 5px;
+
+      font-size: var(--font-size);
+    }
+
+    .productTitle {
+      min-height: auto;
+
+      margin-bottom: 14px;
+
+      font-size: 15px;
+
+      line-height: 1.35;
+    }
+
+    .cardFooter {
+      margin-top: auto;
+    }
+
+    .priceText {
+      font-size: 15px;
+    }
   }
-
-  .mainCardGridIcon {
-    font-size: 2.2rem;
-  }
-
-  .cardContent {
-    padding: 15px 16px 16px;
-  }
-
-  .categoryText {
-    margin-bottom: 5px;
-
-    font-size: var(--font-size);
-  }
-
-  .productTitle {
-    min-height: auto;
-
-    margin-bottom: 14px;
-
-    font-size: 15px;
-
-    line-height: 1.35;
-  }
-
-  .cardFooter {
-    margin-top: auto;
-  }
-
-  .priceText {
-    font-size: 15px;
-  }
-}
 
   /* =========================
      TABLET

@@ -1,95 +1,76 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
-const HomeStyles = styled.div`
-/* =========================================================
-   5. FAQ / ACCORDION SECTION
-========================================================= */
-.faq-section {
-  /* TODO */
+export const HomeWrapper = styled.div`
+  width: 100%;
   background-color: var(--color-gray-bg);
-  padding: 80px 0;
-}
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
 
-.faq-section h2 {
-  /* TODO */
-  color: var(--color-text-dark);
-  font-size: 2rem;
-}
+  /* padding-top: 4.5rem; */
+  padding-top: 75px;
 
-.faq-section > .container > p {
-  /* TODO */
-  max-width: 650px;
-  font-size: var(--font-size);
-  line-height: 1.6;
-}
+  section {
+    width: 100vw !important;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw !important;
+    margin-right: -50vw !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
 
-.accordion {
-  /* TODO */
-   border: 1px solid #edf2f7 !important;
-  overflow: hidden;
-}
-.accordion-button {
-  background-color: var(--color-white);
-  color: var(--color-text-dark);
-  font-size: var(--font-size);
-  padding: 1.2rem;
-  box-shadow: none !important;
-}
-@media (max-width: 768px) {
-  
-
-  .faq-section {
-    padding: 60px 0;
+    & > div:first-child,
+    .hero-content,
+    .swiper {
+      width: 100% !important;
+      max-width: 1200px !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
+      padding-left: 2rem !important;
+      padding-right: 2rem !important;
+      box-sizing: border-box;
+    }
   }
 
-  .faq-section h2 {
-    font-size: 1.7rem;
+  .hero-buttons {
+    display: flex;
+    gap: 1.2rem;
+    margin-top: 2.5rem;
+    justify-content: flex-start;
+
+    button,
+    a {
+      min-width: 160px;
+    }
+
+    @media (max-width: 992px) {
+      justify-content: center;
+    }
+
+    @media (max-width: 480px) {
+      flex-direction: column;
+      width: 100%;
+      button,
+      a {
+        width: 100%;
+      }
+    }
   }
 
-  .faq-section > .container > p {
-    max-width: 600px;
-    font-size: 0.75rem;
-    padding: 0 15px;
-  }
+  /* &[dir="rtl"] {
+    section {
+      text-align: right;
+    }
+    .hero-buttons {
+      justify-content: flex-start;
 
-  .accordion {
-    margin-left: 15px !important;
-    margin-right: 15px !important;
-  }
-}
-
-@media (max-width: 480px) {
-  
-  .faq-section {
-    padding: 45px 0;
-  }
-
-  .faq-section h2 {
-    font-size: 1.4rem;
-    padding: 0 10px;
-  }
-
-  .faq-section > .container > p {
-    font-size: 0.7rem;
-    padding: 0 10px;
-    margin-bottom: 2rem !important;
-  }
-
-  .accordion {
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-  }
-
-  .accordion-button {
-    font-size: 0.8rem;
-    padding: 1rem;
-  }
-
-  .accordion-body {
-    font-size: 0.7rem;
-    padding: 1rem;
-  }
-}
-
+      @media (max-width: 992px) {
+        justify-content: center;
+      }
+    }
+  } */
 `;
-export default HomeStyles ; 
